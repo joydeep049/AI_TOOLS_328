@@ -10,7 +10,7 @@ For more details visit https://docs.opencv.org<br/><br/>
 #1. Face_Detection
 Face detection tools are widely used in modern tech such as self-driving cars, motion sensing, cameras and so on.<br/>
 The algorithm used to create the tool is the haar-cascade algorithm.<br/>
-About Harcascade:<br/>
+About Haar-cascade:<br/>
 Haar-Cascade is a speed-based Machine Learning Face-Detection algorithm in which we feed the system with lots of positive and negative data(faces <br/>
 and non-faces) and then use some Haar features to detect a face in a grayscale image using some brightness based parameters and applying them in <br/>
 different levels to achieve proper detection. Haar-Cascade algorithm technically only works on grayscale images.<br/>
