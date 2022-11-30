@@ -1,5 +1,6 @@
 import cv2 as cv 
 from random import randrange
+import numpy as np
 
 # Add some trained face data 
 trained_face_data= cv.CascadeClassifier('haarcascade_frontalface_default.xml')
@@ -13,8 +14,14 @@ while True:
 
     grayscaled_frame = cv.cvtColor(frame,cv.COLOR_BGR2GRAY)
 
+    #Gaussian Blur
+    blur = cv.GaussianBlur(grayscaled_frame,(5,5),0)
+
+    # Dilation
+    Dilated = cv.dilate(blur, np.ones((3,3)))
+
     # Check face coordinates, detectMultiScale means it can detect faces of all sizes with increased sensitivity.
-    face_coord = trained_face_data.detectMultiScale(grayscaled_frame,1.0485258,6)
+    face_coord = trained_face_data.detectMultiScale(Dilated,1.0485258,6)
 
     # Draw rectangles around face in every frame.
     for (x,y,w,h) in face_coord:
@@ -59,6 +66,16 @@ About Harcascade:
 Haar-Cascade is a speed-based Machine Learning Face-Detection algorithm in which we feed the system with lots of positive and negative data(faces 
 and non-faces) and then use some Haar features to detect a face in a grayscale image using some brightness based parameters and applying them in 
 different levels to achieve proper detection. Haar-Cascade algorithm technically only works on grayscale images.
+
+Gaussian blur:
+Gaussian blur is one of the techniques of image processing. 
+It is widely used in graphics designing too for reducing the noise and smoothing the image so that for further preprocessing, 
+it will generate better output. 
+Along with reducing the noise in the image Gaussian blur technique also reduces the image’s details.
+
+Dilation:
+Dilation is one of the morphological techniques where we try to fill the pixels with the element, also known as kernels (structured pieces),
+to fill the missing parts of the images whenever needed.
 
 For more details on Haar , go to https://docs.opencv.org/3.4/db/d28/tutorial_cascade_classifier.html
 
