@@ -1,4 +1,4 @@
-# opencvpr
+# AI_ML_TOOLS
 Hello people.<br/>
 This repository contains all the AI tools that i have built and also some that i am currently building.<br/>
 I am gonna be explaining each one of these tools and also their underlying algorithms to help you understand them as nicely as possible.<br/><br/>
@@ -21,3 +21,7 @@ For more details on Haar , go to https://docs.opencv.org/3.4/db/d28/tutorial_cas
 This type of tracking algorithms are very widely used in self-driving cars made by Tesla. It is an algorithm with a high scope for optimization, although in the given code it is optimized as much as possible.<br/>
 It uses the same underlying algorithm as face detection i.e Haar-Cascade. It uses the same concept as the previous tool , but a different set of trained data.<br/>
 Further details are given in code.<br/>
+
+#3. Smile_Detection
+Smile Detection algorithm is very similar to face detection in theory. But in reality, it requires a bit more code and a lot more optimization.
+<br/> These algorithms are also used in abundance in video and image processing.
